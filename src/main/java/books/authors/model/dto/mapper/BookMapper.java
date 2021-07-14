@@ -8,7 +8,7 @@ import org.mapstruct.factory.Mappers;
 
 @Mapper(uses = AuthorMapper.class)
 public interface BookMapper {
-    BookMapper BOOK_MAPPER = Mappers.getMapper(BookMapper.class);
+    BookMapper bookMapper = Mappers.getMapper(BookMapper.class);
     @Mapping(source = "books", target = "booksList")
     BookDto fromBook(Book book);
 }

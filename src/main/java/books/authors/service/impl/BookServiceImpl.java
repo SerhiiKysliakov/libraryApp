@@ -43,7 +43,7 @@ public class BookServiceImpl implements BookService {
             return null;
         }
         Book book = bookOptional.get();
-        BookDto bookDto = BookMapper.BOOK_MAPPER.fromBook(book);
+        BookDto bookDto = BookMapper.bookMapper.fromBook(book);
         return bookDto;
     }
 
@@ -52,7 +52,7 @@ public class BookServiceImpl implements BookService {
         List<BookDto> bookDtos = new ArrayList<>();
         List<Book> bookList = bookDao.getAll();
         for (Book book : bookList) {
-            bookDtos.add(BookMapper.BOOK_MAPPER.fromBook(book));
+            bookDtos.add(BookMapper.bookMapper.fromBook(book));
         }
         return bookDtos;
     }

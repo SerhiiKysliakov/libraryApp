@@ -41,7 +41,7 @@ public class AuthorServiceImpl implements AuthorService {
         List<AuthorDto> authorDtoList = new ArrayList<>();
         List<Author> authorList = authorDao.getAll();
         for (Author author : authorList) {
-            authorDtoList.add(AuthorMapper.AUTHOR_MAPPER.fromAuthor(author));
+            authorDtoList.add(AuthorMapper.authorMapper.fromAuthor(author));
         }
         return authorDtoList;
     }
@@ -53,7 +53,7 @@ public class AuthorServiceImpl implements AuthorService {
             return null;
         }
         Author author = optionalAuthor.get();
-        AuthorDto authorDto = AuthorMapper.AUTHOR_MAPPER.fromAuthor(author);
+        AuthorDto authorDto = AuthorMapper.authorMapper.fromAuthor(author);
         return authorDto;
     }
 
@@ -62,7 +62,7 @@ public class AuthorServiceImpl implements AuthorService {
         List<AuthorDto> authorDtoList = new ArrayList<>();
         List<Author> authorList = authorDao.getByBookTitle(title);
         for (Author author : authorList) {
-            authorDtoList.add(AuthorMapper.AUTHOR_MAPPER.fromAuthor(author));
+            authorDtoList.add(AuthorMapper.authorMapper.fromAuthor(author));
         }
         return authorDtoList;
     }

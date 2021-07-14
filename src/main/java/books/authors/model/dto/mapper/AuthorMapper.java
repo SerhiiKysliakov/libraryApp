@@ -8,7 +8,7 @@ import org.mapstruct.factory.Mappers;
 
 @Mapper/*(uses = BookMapper.class)*/
 public interface AuthorMapper {
-    AuthorMapper AUTHOR_MAPPER = Mappers.getMapper(AuthorMapper.class);
+    AuthorMapper authorMapper = Mappers.getMapper(AuthorMapper.class);
     AuthorDto fromAuthor(Author author);
 
     @InheritInverseConfiguration

@@ -13,6 +13,9 @@ public class Book {
     @GeneratedValue
     private Long id;
     private String title;
-    @ManyToMany(cascade = CascadeType.ALL)
+    @ManyToMany
+    @JoinTable (name="authors_books",
+            joinColumns=@JoinColumn (name="book_id"),
+            inverseJoinColumns=@JoinColumn(name="author_id"))
     private List<Author> authors;
 }
