@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/books/authors")
+@RequestMapping("/authors")
 public class AuthorController {
     private final AuthorService authorService;
 
@@ -27,7 +27,7 @@ public class AuthorController {
         return authorService.getById(id);
     }
 
-    @GetMapping("/getByKeyword/{title}")
+    @GetMapping("/getByKeyword")
     public List<AuthorDto> getByBookKeyword(@RequestParam String title) {
         return authorService.getByBookTitle(title);
     }
